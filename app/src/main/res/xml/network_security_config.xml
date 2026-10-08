@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The noVNC server exposes plain HTTP on port 6080 by default, so cleartext is allowed.
+     Use HTTPS (reverse proxy / VPN / SSH tunnel) on untrusted networks. -->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
