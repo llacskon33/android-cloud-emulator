@@ -1,0 +1,27 @@
+services:
+  android:
+    build: .
+    image: ghcr.io/llacskon33/android-cloud-emulator:latest
+    container_name: android-emulator
+    devices:
+      - /dev/kvm:/dev/kvm
+    group_add:
+      - "${KVM_GID:-993}"
+    ports:
+      - "127.0.0.1:6080:6080"   # noVNC (put a TLS reverse proxy in front for remote access)
+      - "127.0.0.1:5900:5900"   # VNC
+      - "127.0.0.1:5555:5555"   # adb
+    env_file:
+      - .env
+    volumes:
+      - android-data:/data
+      - android-backups:/backups
+    deploy:
+      resources:
+        limits:
+          cpus: "4"
+          memory: 8g
+    restart: unless-stopped
+volumes:
+  android-data:
+  android-backups:
