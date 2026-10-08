@@ -1,0 +1,22 @@
+services:
+  android-cloud-emulator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: android-cloud-emulator
+    privileged: true
+    tty: true
+    stdin_open: true
+    ports:
+      - "6080:6080"
+      - "5554:5554"
+      - "5555:5555"
+      - "5900:5900"
+    environment:
+      - DISPLAY=:99
+      - ANDROID_HOME=/opt/android-sdk
+      - ANDROID_SDK_ROOT=/opt/android-sdk
+      - PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/android-sdk/cmdline-tools/latest/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/emulator
+    volumes:
+      - ./apks:/apks
+    command: ["/bin/bash", "/opt/start-emulator.sh"]
