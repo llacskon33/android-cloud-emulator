@@ -1,0 +1,2 @@
+.apkbuild/gen/com/example/androidcloudemulator/R.java
+app/src/main/java/com/example/androidcloudemulator/MainActivity.java
