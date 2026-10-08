@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Cloud Emulator</string>
+    <string name="host_hint">IP o dominio del servidor</string>
+    <string name="port_hint">Puerto</string>
+    <string name="password_hint">Contraseña VNC (opcional)</string>
+    <string name="use_https">Usar HTTPS</string>
+    <string name="connect">Conectar</string>
+    <string name="disconnect">Desconectar</string>
+    <string name="refresh">Recargar</string>
+    <string name="status_disconnected">Desconectado</string>
+    <string name="status_connecting">Conectando…</string>
+    <string name="status_connected">Conectado</string>
+    <string name="status_error">Error de conexión</string>
+    <string name="error_host">Introduce una IP o dominio válido</string>
+    <string name="error_port">Puerto inválido (1-65535)</string>
+</resources>

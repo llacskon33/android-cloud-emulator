@@ -1,0 +1,1 @@
+-keep class com.llacskon33.cloudemulator.** { *; }
